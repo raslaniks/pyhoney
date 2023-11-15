@@ -1,1 +1,3 @@
 parglare
+coverage
+pytest
