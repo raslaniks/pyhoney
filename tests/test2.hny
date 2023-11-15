@@ -1,0 +1,34 @@
+# real working multiboot kernel #
+
+format multiboot
+
+# video buffer #
+video: char[] = 0xb8000 as char[]
+
+vga_cursor: int = 0
+
+
+fn print(text: str) -> char {
+	return 'A'
+}
+
+fn show_alphabet() {
+	for i: u32 in 0..23 {
+		video[i] = 'A' + i as u8 as u8
+	}
+}
+
+fn show_alphabet_c_loop() {
+	for i: u32 = 0; i < 23; i++ {
+		video[i] = 'A' + 3
+	}
+}
+
+
+# main function #
+fn main(argc: int, argv: str[]) -> int {
+	video[0] = print("ratata") # proof of work #
+	# test forever loop #
+	for {}
+	leave # bootloader hangs automatically after kernel return #
+}
