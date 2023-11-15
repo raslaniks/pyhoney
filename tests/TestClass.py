@@ -8,4 +8,4 @@ class TestClassDemoInstance:
         assert self.value == 1
 
     def test_multiboot(self):
-        os.system("HOME_PATH/main.py -o tests/test1.o tests/test1.hny")
+        os.system("HOME_PATH/main.py -o tests/test1.elf tests/test1.hny")
