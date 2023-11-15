@@ -30,7 +30,9 @@ jobs:
     - name: Install Honey
       run: make install
     - name: Run Honey
-      run: python "HONEY_PATH/main.py" -h
+      run: |
+        python "HONEY_PATH/main.py" -h
+        HOME_PATH/main.py -o tests/test1.elf tests/test2.hny
     - uses: pavelzw/pytest-action@v2
       with:
         emoji: false
